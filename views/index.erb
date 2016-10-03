@@ -1,0 +1,17 @@
+<!doctype html>
+<head> </head>
+<body> 
+	<% if session[:error] %> 
+	<p> <%= session.delete(:error) %> </p>
+	<% end %> 
+	<ul>
+		<% @file.each do |file| %> 
+		<a href="/<%=file%>">
+			<li> <%= file %>  
+		</a>
+			<a href="/<%=file%>/edit"> Edit </a>
+			</li>
+		<% end %> 
+	</ul>
+</body>
+</html>
